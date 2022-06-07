@@ -8,7 +8,6 @@
 <div>
     <form action="comments">
         <input type="submit" value="GO">
-
     </form>
 </div>
 </body>

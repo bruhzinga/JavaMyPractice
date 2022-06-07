@@ -32,9 +32,12 @@ public class LoginServlet extends HttpServlet {
 
             if (user != null) {
                 request.setAttribute("user", user);
+
                 if (user.getRole() == User.Role.USER) {
                     getServletContext().getRequestDispatcher("/views/user.jsp").forward(request, response);
                 } else {
+
+
                     if (getCookie(request,"time") == null){
                         request.setAttribute("time",null);
                     }
