@@ -1,17 +1,21 @@
 package com.example.task3.servlet;
 
 import com.example.task3.db.UserDB;
-import com.example.task3.log.Log;
+
 import com.example.task3.model.User;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
+
 
 @WebServlet(name = "WorkServlet", value = "/work")
 public class WorkServlet extends HttpServlet {
     private static final String INFO_MESSAGE = "Недостаточно средств";
+    Logger  logger = Logger.getLogger(WorkServlet.class.getName());
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,7 +40,7 @@ public class WorkServlet extends HttpServlet {
                         UserDB.update(newUser);
                         request.getSession().setAttribute("user", newUser);
 
-                        Log.write("Покупка на сумму " + quantity);
+                        logger.info("Покупка на сумму " + quantity);
                     } else {
                         request.setAttribute("info", INFO_MESSAGE);
                     }
@@ -48,7 +52,7 @@ public class WorkServlet extends HttpServlet {
                     UserDB.update(newUser);
                     request.getSession().setAttribute("user", newUser);
 
-                    Log.write("Пополнение на сумму " + quantity);
+                    logger.info("Пополнение на сумму " + quantity);
                     break;
                 }
             }
