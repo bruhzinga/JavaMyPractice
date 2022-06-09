@@ -14,8 +14,7 @@
 <div>
     <p>Time: ${time}</p>
     <p>Protocol: ${protocol}</p>
-    <p>User Name: ${userName}</p>
-    <p>Header info: ${header}</p>
+    <p>Header info: ${headerr}</p>
     <p>Mimo method: ${method}</p>
 </div>
 <div>

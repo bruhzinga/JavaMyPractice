@@ -15,8 +15,7 @@ public class GetPostServlet extends HttpServlet {
 
         request.setAttribute("time", new Date().toString());
         request.setAttribute("protocol", request.getProtocol());
-        request.setAttribute("userName", request.getRemoteUser());
-        request.setAttribute("header", request.getHeader("User-Agent").toString());
+        request.setAttribute("headerr", request.getHeader("User-Agent"));
         request.setAttribute("method", request.getMethod());
         getServletContext().getRequestDispatcher("/views/get.jsp").forward(request, response);
     }

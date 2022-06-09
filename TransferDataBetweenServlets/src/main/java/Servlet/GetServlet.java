@@ -11,11 +11,7 @@ import java.io.IOException;
 @WebServlet(name = "GetServlet", urlPatterns = "/get")
 public class GetServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //для отправки на jsp
-        //        String var = (String) request.getAttribute("str");
-        //        response.getWriter().println(var);
 
-        //в другой сервлет
         HttpSession session = request.getSession();
         response.getWriter().println(session.getAttribute("str"));
     }
