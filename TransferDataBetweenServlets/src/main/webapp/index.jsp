@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: Onya
@@ -17,5 +19,16 @@
     <form action="get" method="post">
         <input type="submit" value="get">
     </form>
+
+    <form action="setAttribute" method="get">
+        <input type="submit" value="getAttribute">
+    </form>
+
+
+
+
+   <c:if test="${str != null}">
+       <c:out value = "${str}"/>
+   </c:if>
 </body>
 </html>
